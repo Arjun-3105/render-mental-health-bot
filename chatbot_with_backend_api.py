@@ -12,7 +12,7 @@ app = FastAPI()
 class ChatRequest(BaseModel):
     user_message: str
 
-# Simple crisis keyword detection
+# crisis
 CRISIS_KEYWORDS = ["suicide", "kill myself", "cutting", "self-harm", "end it all"]
 
 def detect_crisis(text):
@@ -28,7 +28,7 @@ async def chat(data: ChatRequest):
             "response": "I'm really sorry you're feeling this way. You're not alone. Please consider calling a crisis line like 988 (in the U.S.) or reaching out to a trusted friend or therapist."
         }
 
-    # Prompting the LLM
+    # LLM model
     payload = {
         "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free",
         "messages": [
